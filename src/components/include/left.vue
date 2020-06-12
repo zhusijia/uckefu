@@ -1,4 +1,5 @@
 <template>
+  <el-scrollbar style="height: 100%;">
   <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
     background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b">
     <el-menu-item index="/">
@@ -151,6 +152,7 @@
       <span slot="title">统计</span>
     </el-menu-item>
   </el-menu>
+</el-scrollbar>
 </template>
 <script>
   export default {
@@ -170,6 +172,8 @@
   }
 </script>
 
-<style lang="stylus">
-
-</style>
+<style>
+  .el-scrollbar__wrap {
+     overflow-x: hidden;
+  }
+  </style>
