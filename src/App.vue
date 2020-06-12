@@ -5,9 +5,9 @@
         <top></top>
       </div>
       <div class="content">
-        <div class="left-container">
-          <left></left>
-        </div>
+          <div class="left-container">
+            <left></left>
+          </div>
         <div class="right-container">
           <router-view></router-view>
         </div>
@@ -23,7 +23,7 @@
   import Left from './components/include/left'
   import Top from './components/include/top'
   import Login from './components/user/login'
-  import {store} from './store/store'
+  import { store } from './store/store'
 
   export default {
     name: 'App',
@@ -33,22 +33,24 @@
       Login
     },
     computed: {
-        currentUser(){
-          return this.$store.state.currentUser
-        },
-        isLogin(){
-          return this.$store.state.isLogin
-        },
-        isAdmin(){
-          return this.$store.state.isLogin
-        }
+      currentUser() {
+        return this.$store.state.currentUser
       },
+      isLogin() {
+        return this.$store.state.isLogin
+      },
+      isAdmin() {
+        return this.$store.state.isAdmin
+      }
+    },
   }
 </script>
 
 <style scoped>
   .content {
     display: flex;
+    min-height: 100%;
+    flex-direction: row
     /* margin-top: -5px; */
   }
 
@@ -58,6 +60,6 @@
   }
 
   .right-container {
-    flex: 1
+    /* flex: 1 */
   }
 </style>
