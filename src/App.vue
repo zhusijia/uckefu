@@ -1,22 +1,15 @@
 <template>
-  <div id="app">
-    <div id="content1" v-show="isLogin">
-      <div class="top-container">
-        <top></top>
-      </div>
-      <div class="content">
-          <div class="left-container">
-            <left></left>
-          </div>
-        <div class="right-container">
-          <router-view></router-view>
-        </div>
-      </div>
-    </div>
-    <div id="content2" v-show="!isLogin">
-      <login></login>
-    </div>
-  </div>
+  <el-container id="app-content">
+    <el-header>
+      <top></top>
+    </el-header>
+    <el-container class="main-container">
+      <el-aside width="200px"><left></left></el-aside>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -46,20 +39,11 @@
   }
 </script>
 
-<style scoped>
-  .content {
-    display: flex;
-    min-height: 100%;
-    flex-direction: row
-    /* margin-top: -5px; */
-  }
-
-  .left-container {
-    min-width: 200px;
-    margin-top: -1px;
-  }
-
-  .right-container {
-    /* flex: 1 */
-  }
+<style lang="stylus" scoped>
+  #app-content 
+    height 100%
+    .el-header
+      padding 0
+    .main-container
+      height calc(100vh - 60px)
 </style>
